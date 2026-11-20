@@ -41,3 +41,29 @@ npm test
 ```
 
 The older Python/SQLite finance service modules remain separate and are not wired to this UI.
+
+## Application Screenshots
+
+Explore the PocketWise interface:
+
+
+### 1. Landing Page
+![PocketWise Landing Page](Screenshots/Landing-Page.png)
+
+### 2. Dashboard
+![PocketWise Dashboard](Screenshots/Dashboard.png)
+
+### 3. Transactions
+![PocketWise Transactions](Screenshots/Transactions.png)
+
+### 4. Add Expense
+![Add Expense](Screenshots/Add-Expense.png)
+
+### 5. Savings Goals
+![Savings Goals](Screenshots/Saving-goals.png)
+
+### 6. Money Forecast
+![Money Forecast](Screenshots/Money-Forecast.png)
+
+### 7. AI Money Coach
+![AI Money Coach](Screenshots/AI-Money-Coach.png)
