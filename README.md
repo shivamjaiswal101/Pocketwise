@@ -1,51 +1,105 @@
-# PocketWise · Student Finance
+# PocketWise – Student Personal Finance App
 
-PocketWise is a React + TypeScript student finance application built with Vite and Lucide icons.
+**Understand your money. Control your spending.**
 
-## Run locally on Windows
+PocketWise is a student-focused personal finance application designed to help students track expenses, manage income, set savings goals, and understand their spending patterns.
 
-Requires Node.js 20.19+ (the current development setup uses Node 22). Double-click **Start PocketWise.bat**. The launcher installs the locked frontend dependencies if needed, starts the local Vite server, and opens the app. Keep the console open while using it.
+The project was developed with AI assistance using **OpenAI Codex**, with human direction, feature planning, review, and testing.
 
-Or use PowerShell:
+## Key Features
 
-```powershell
-npm install
-npm run dev -- --host 127.0.0.1 --open
+- **Dashboard:** Overview of recorded income, expenses, and available balance.
+- **Expense Tracking:** Add, edit, delete, search, and filter expenses.
+- **Income Management:** Record income and view transaction history.
+- **Savings Goals:** Create savings goals, track progress, and record contributions.
+- **Money Forecast:** Estimate future balances using recorded financial activity and upcoming expenses.
+- **AI Money Coach Preview:** Explore sample financial conversations and a demo interface.
+
+## Technology Stack
+
+**Frontend**
+- React.js
+- TypeScript
+- Vite
+- CSS
+- Lucide React
+
+**Additional Services**
+- Python
+- SQLite
+
+**Development Tools**
+- Node.js
+- npm
+- Git and GitHub
+- OpenAI Codex (AI-assisted development)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 20.19+ 
+- npm
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/shivamjaiswal101/Pocketwise.git
 ```
 
-## Temporary preview and authentication UI
+Move into the project directory:
 
-- `/` and `/welcome`: landing page with account actions and a **temporary preview** entry.
-- `/register`: validated form. After validation, choose **Continue in temporary preview** to enter the dashboard. Only the display name is kept in this browser tab; passwords and email are discarded.
-- `/login`: validated login UI. Login itself is not connected; valid input offers the same temporary preview option.
-- `/verify-email`: six-digit UI; no code is sent or verified.
-- `/register-success`: development preview only; its dashboard button remains disabled.
-- `/forgot-password`: validated form; no reset email is sent.
-- `/dashboard`: first-time dashboard. It labels temporary sessions and offers an **End preview** action. A direct visit without a temporary session is labeled as a development preview.
+```bash
+cd Pocketwise
+```
 
-The temporary preview is not an account or secure authentication. It lasts for this browser tab only and stores a display name in `sessionStorage`; it never stores a password or sends any entered data. Add Expense and Add Income save unified transaction records to browser `localStorage`; the Transactions page searches, filters, views, edits, and deletes these same records. Savings goals and their recorded contributions use a separate key in the same browser storage and do not affect income, expenses, or recorded balance. Existing expense records are read from the previous expense storage key and carried forward when the unified transaction store is first written. Records remain after refresh and browser restart in the same browser profile, but are not synced across devices or users. Available Balance is total recorded income minus total recorded expenses across all dates; transaction-page summaries use the selected date range. Neither is a verified bank balance. Goal contributions are progress records only and do not represent bank transfers. Authentication remains a preview and does not create real accounts.
+Install dependencies:
 
-## AI Money Coach preview
+```bash
+npm install
+```
 
-The AI Money Coach is in **demo mode**. Suggested questions load explicitly labeled sample conversations; typed messages remain in page memory and are not sent to an AI service. The financial snapshot reads the existing local transaction and forecast services. No LLM SDK, API key, or external AI request is used.
+Start the development server:
 
-The future request/response contract is in `src/coach/coachContract.ts`, with an optional same-origin HTTP adapter in `src/coach/coachApi.ts` targeting `POST /api/coach/messages`. That backend route is intentionally not implemented: the current React preview has no authenticated API backend, and the separate Python/SQLite service is not connected to it. A secure backend must authenticate users, retrieve approved financial context from application services, validate provider configuration, and call the selected provider before live mode can be enabled. Adding a key alone will not activate live AI.
+```bash
+npm run dev
+```
 
-Reserved server-side settings are listed in `.env.example`. Keep secrets in a backend environment file and never add an `AI_API_KEY` to a `VITE_` variable. `.env` and other `.env.*` files are ignored by Git; `.env.example` contains placeholders only.
+Open the local URL displayed in your terminal.
 
-## Build
+## Testing and Production Build
 
-```powershell
-npm run build
+Run automated tests:
+
+```bash
 npm test
+```
+
+Create a production build:
+
+```bash
+npm run build
 ```
 
 The older Python/SQLite finance service modules remain separate and are not wired to this UI.
 
+## Current Implementation Notes
+
+PocketWise is currently a development project with the following limitations:
+
+- Registration and login are preview interfaces, not real authentication.
+- Transaction records are stored in browser localStorage.
+- Data is not synchronized across users or devices.
+- The AI Money Coach currently runs in demo mode and does not connect to a live AI provider.
+- The Python/SQLite finance service is separate and is not integrated with the React interface.
+- Savings goal contributions are progress records, not actual bank transfers.
+- Displayed balances are calculated from recorded transactions, not verified bank balances.
+
 ## Application Screenshots
 
 Explore the PocketWise interface:
-
 
 ### 1. Landing Page
 ![PocketWise Landing Page](Screenshots/Landing-Page.png)
@@ -67,3 +121,27 @@ Explore the PocketWise interface:
 
 ### 7. AI Money Coach
 ![AI Money Coach](Screenshots/AI-Money-Coach.png)
+
+## AI-Assisted Development
+
+OpenAI Codex was used as an AI coding assistant during development.
+
+The project involved defining requirements, planning features, guiding implementation, reviewing generated code, and testing application functionality.
+
+## Future Improvements
+
+- Secure user authentication
+- Backend integration
+- Persistent cloud database
+- Live AI Money Coach integration
+- Improved financial insights
+- Responsive design enhancements
+
+## Project Status
+
+**Development version – ongoing improvements.**
+
+---
+
+Built as an AI-assisted student personal finance project.
+
