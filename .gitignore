@@ -1,0 +1,16 @@
+__pycache__/
+.pytest_cache/
+.venv/
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+data/*.db
+data/*.db-*
+
+data/*.log
+data/*.log.*
+
+.test-tmp/
+*.tsbuildinfo
